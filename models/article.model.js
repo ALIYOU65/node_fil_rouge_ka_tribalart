@@ -22,7 +22,16 @@ const articleSchema = new mongoose.Schema({
     images: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Image",
-    }]
+    }],
+    statut: {
+    type: String,
+    enum: ["Disponible", "Vendu", "Réservé"],
+    default: "Disponible"
+  },
+    quantite: {
+    type: Number,
+    default: 1
+  }
 }, { timestamps: true,
   collection: "articles"
 });

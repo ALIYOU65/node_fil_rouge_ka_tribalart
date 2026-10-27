@@ -39,20 +39,3 @@ export default router;
 
 
 
-// import { Router } from "express";
-// import { createArticle, getAllArticles, getArticleById, updateArticle, deleteArticle, attachImages, detachImages, articleController.getArticlesByCategory } from "../controllers/article.controller.js"
-// import { upload } from "../middleware/multer.js"; 
-
-// const router = Router()
-
-// router.post('/new', upload.array('images'), createArticle); 
-// // router.post('/new', createArticle)
-// router.get('/all', getAllArticles)
-// router.put('/attach/:id', attachImages)
-// router.put('/detach/:id', detachImages)
-// router.get('/:id', getArticleById)
-// router.put('/:id', updateArticle)
-// router.delete('/:id', deleteArticle)
-// router.get('/by-category', articleController.getArticlesByCategory);
-
-// export default router

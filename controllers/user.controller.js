@@ -43,11 +43,18 @@ const login = async(req, res) => {
         if(!isMatch){
             return res.status(400).json({message: "invalide invalides"})
         }
+        
         res.status(200).json({
-            message: user.email+" est connecté",
-             role: user.role,  // Ajout du rôle
-            token: jwt.sign({ id: user._id, email:  user.email, role: user.role }, process.env.SECRET_KEY, { expiresIn: "24h" }) // Ajout du rôle dans le token
-        })
+         message: user.email + " est connecté",
+         role: user.role,
+         prenom: user.prenom,        
+         nom: user.nom,              
+         token: jwt.sign(
+         { id: user._id, email: user.email, role: user.role },
+          process.env.SECRET_KEY,
+         { expiresIn: "24h" }
+        )
+      });
     } catch (error) {
         console.log(error)
         res.status(500).json({message: "Erreur serveur", error: error}) 

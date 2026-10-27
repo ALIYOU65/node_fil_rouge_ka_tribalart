@@ -11,7 +11,7 @@ const imageSchema = new mongoose.Schema({
   images: [
     {
       url: { type: String, required: true },
-      filename: { type: String } // si tu veux garder le nom physique du fichier
+      filename: { type: String } 
     }
   ]
 }, { timestamps: true });
